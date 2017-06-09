@@ -26,9 +26,9 @@ app.use('/', routes);
 app.use('/users', users);
 
 app.use('/env', function (req, res) {
-  var envText =
-      JSON.stringify(process.env);
-  res.send('env: ' + envText);
+  var envText = JSON.stringify(process.env);
+  var headText = JSON.stringify(req.headers);
+  res.send('env: ' + envText + '<br> headers: ' + headText);
 })
 
 // catch 404 and forward to error handler
