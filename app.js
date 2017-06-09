@@ -27,9 +27,7 @@ app.use('/users', users);
 
 app.use('/env', function (req, res) {
   var envText =
-      process.env.map(function (env) {
-      return env; 
-    }).join('/');
+      process.env;
   res.send('env: ' + envText);
 })
 
